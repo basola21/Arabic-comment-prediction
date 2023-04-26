@@ -12,4 +12,12 @@ Features:
 - Robust and customizable pre-processing of Arabic text, including normalization and tokenization
 
 
+<!-- GETTING STARTED -->
+## Resources
+
+Data link : https://www.kaggle.com/datasets/abedkhooli/arabic-100k-reviews
+
+
+
+
 This project is licensed under the MIT License and is open source. Contributions are welcome!
