@@ -1,0 +1,146 @@
+{% load static %} {% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+
+    <title>Arabic Comments Classifier</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+        <div class="container">
+            <a class="navbar-brand" href="#">Arabic Classifier</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample07">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">by Basel Rokaya</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+        <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <img src="{% static 'images/ayin-arabic-alphabet-arabic-wikipedia-letter-png-favpng-ekQi5jRq7DeTUWqEqhEGabX6x-removebg-preview.png' %}"
+                    width="40" height="60" class="me-2" alt = "arabic logo">
+
+                <span class="fs-4">Text Mining Project</span>
+            </a>
+        </header>
+
+        
+
+        <main>
+            <h1>Write your Arabic text below</h1>
+            <form method="post">
+                {% csrf_token %}
+                {% render_field form.arabic_text placeholder="arabic text" class="fs-5 col-md-8"%}
+
+                <br>
+                <br>
+                
+
+                <div class="mb-5">
+                    <button class="btn btn-primary btn-lg px-4" type="submit">Submit</button>
+                </div>
+            </form>
+            
+            {% if prediction %}
+            <h5>Result</h5>
+           <h3> {{ prediction }} </h3>
+           {% endif %}
+            <hr class="col-3 col-md-2 mb-5">
+
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h2>About the project</h2>
+                    <p>Welcome to my website designed to take in Arabic text prompts and classify them as either
+                        positive or
+                        negative using the power of machine learning! It is built with Django and utilizes the popular
+                        machine
+                        learning library, scikit-learn (sklearn), to classify the sentiment of Arabic text</p>
+
+                    <p>It is a powerful tool for analyzing Arabic text sentiment, and it has numerous applications in
+                        various
+                        fields, including customer service, market research, and personal development. With the use of
+                        machine
+                        learning, I provide accurate and efficient sentiment analysis, enabling businesses and
+                        individuals to
+                        make data-driven decisions and improve their overall experience.</p>
+
+                    <h5>Resources</h5>
+                    <ul class="icon-list">
+                        <li><a href="#" rel="noopener" target="_blank">Django Framework</a></li>
+                        <li><a href="#" rel="noopener" target="_blank">sklearn</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <h2>Why</h2>
+                    <p>As we all know, with the increasing use of social media and online platforms, there is a vast
+                        amount of
+                        text data generated daily. Analyzing this data can be a tedious and time-consuming task,
+                        especially when
+                        it comes to identifying the sentiment of online comments. My website aims to solve this problem
+                        by
+                        automating the sentiment analysis process for Arabic text, making it easier for businesses and
+                        individuals to monitor and respond to online comments effectively.</p>
+                    <p>Another use case for my website is in the field of personal research. You can use my website to
+                        analyze
+                        customer feedback, gain insights into consumer behavior, preferences, and trends. For instance,
+                        you can
+                        use my website to analyze social media comments about your personal interests and identify the
+                        features
+                        that people like or dislike.</p>
+                    <ul class="icon-list">
+                        <li><a href="#">GitHub Repository</a></li>
+                        <li><a href="/docs/5.0/getting-started/webpack/">linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer class="pt-5 my-5 text-muted border-top">
+            Created by Basel Rokaya &middot; &copy; 2023
+        </footer>
+    </div>
+
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+
+</body>
+
+</html>
