@@ -1,6 +1,10 @@
 # Arabic Text Sentiment Analysis with Django and Scikit-learn
 
-<img src="images/frame_generic_dark.png" alt="demo" >
+
+
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/63477635/234445680-13a05e8f-b479-4b37-a9dd-ab931935421e.gif)
+
+
 
 This project is designed to help businesses and individuals monitor and analyze Arabic text sentiment using machine learning. It is built with Django and utilizes the popular machine learning library, Scikit-learn (sklearn), to classify Arabic text into positive or negative sentiment.
 
